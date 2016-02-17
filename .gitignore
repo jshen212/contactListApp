@@ -1,0 +1,8 @@
+// src folder
+src/**/*.js
+
+// node modules
+node_modules/
+
+// bundled file - not minified
+bundle.js

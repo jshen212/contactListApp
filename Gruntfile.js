@@ -28,15 +28,15 @@ module.exports = function(grunt) {
         mangle: false
       },
       dist: {
-        src:['src/**/*.js'],
-        dest: 'dist/bundle.uglify.js'
+        src:['dist/bundle.js'],
+        dest: 'dist/bundle.min.js'
       }
     },
 
     watch: {
       scripts: {
         files: 'src/**/*.js',
-        tasks: ['<%= jshint.files %>'],
+        tasks: ['jshint'],
         options: {
           event: ['added', 'deleted'],
         },
@@ -50,4 +50,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.task.registerTask('bundle', ['jshint', 'concat', 'uglify']);
+  grunt.task.registerTask('default', ['jshint'] );
 };

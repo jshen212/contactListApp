@@ -12,7 +12,7 @@ app.get('/contactlist', function(req,res){
   // console.log('i received a GET request');
   db.contactlist.find(function(err,docs){
     res.json(docs);
-    // console.log(docs);
+    console.log(docs);
   });
 });
 
