@@ -1,5 +1,5 @@
 // src folder
-src/**/*.js
+src/public/controllers/controller.js
 
 // node modules
 node_modules/
