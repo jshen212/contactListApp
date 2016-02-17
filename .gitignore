@@ -1,5 +1,6 @@
 //controller
 public/controllers/controller.js
+dist
 
 // node modules
 node_modules/
