@@ -28,7 +28,7 @@ module.exports = function(grunt) {
         mangle: false
       },
       dist: {
-        src:['dist/bundle.js'],
+        src:['src/public/controllers/controller.js'],
         dest: 'dist/bundle.min.js'
       }
     },
@@ -49,6 +49,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.task.registerTask('bundle', ['jshint', 'concat', 'uglify']);
+  grunt.task.registerTask('bundle', ['jshint', 'uglify']);
   grunt.task.registerTask('default', ['jshint'] );
 };
