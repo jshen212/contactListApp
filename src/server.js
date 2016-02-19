@@ -1,6 +1,6 @@
 var express = require('express');
 var mongojs = require('mongojs');
-var db = mongojs('contactlist', ['contactlist']);
+var db = mongojs("mongodb://jeffshen86@gmail.com:J3ffr3y86@ds011228.mongolab.com:11228/heroku_ng59m694", ["contactlist"]);
 var bodyParser = require('body-parser');
 var app = express();
 
@@ -19,6 +19,7 @@ app.get('/contactlist', function(req,res){
 app.post('/contactlist', function(req, res){
   console.log(req.body);
   db.contactlist.insert(req.body, function(err,doc){
+    console.log(doc);
     res.json(doc);
   });
 });
@@ -50,5 +51,5 @@ app.put('/contactlist/:id', function(req,res){
     });
   });
 
-  app.listen(1337);
-  console.log('server running on 1337');
+  app.listen(process.env.PORT || 8000);
+  console.log('server running on 8000');
